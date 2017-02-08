@@ -6,6 +6,7 @@ Logic Programming Assignment
 
 
 /* Question1 */
+
 sum-up-numbers-simple([],0). %Base Case: Check if list is empty then 0
 
 sum-up-numbers-simple([X|Y], N);- 	%predicate that takes a list and gives result 
@@ -20,8 +21,17 @@ sum-up-numbers-simple(Y, N).
 
 
 /* Question2 */
+
 sum-up-numbers-general([],0).	%Base Case: Check if list is empty then 0
+
 sum-up-numbers-general([X|Y], N):-	    %Predicate for the sum
 xnumber(X),                             %check to see if head(first element) is a number
 sum-up-numbers-general(Y,N1),           %recursive call to get the rest of element
 N is X + N1.                            %Assign sum to the result
+
+
+sum-up-numbers-general([X|Y], N):-
+atom(X),                                %Base Case: Check to see if a single element
+sum-up-numbers-general(Y, N).
+
+
