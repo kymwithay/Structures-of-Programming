@@ -48,6 +48,16 @@ listlength(L2, Length),
 Length < 1,
 min_in_list(L1, N).
 
+min-above-min(L1, _, N):-
+listlength(L1, Length),
+Length < 1,
+N is -1.
+
+min-above-min(L1, L2, N):-
+min_in_list(L2, Min_of_L2),
+list_above_min(Min_of_L2, L1, New_list),
+min_in_list(New_list, N).
+
 
 /* Question4 */
 common-unique-elements([],_,[]).            % Base Case: Check if list 1 is empty then result is empty
@@ -55,4 +65,7 @@ common-unique-elements([X|L1], L2, [Y|L3]):-    %Recursively get the first eleme
 member(L2,X),!,common-unique-elements(L1,L2,L3).     %Check to see if 1st element of list one is common to that in list 2
 
 common-unique-elements([_|L1], L2, L3):-
-common-unique-elements(L1,L2,L3).             %Recursively get the rest of the elemnts in the list
+common-unique-elements(L1,L2,L3).               %Recursively get the rest of the ele in the list
+
+member([X|_],X).                               %Check if head of each are equal.
+member([_|Y], X):- member(Y,X).
