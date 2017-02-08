@@ -22,4 +22,4 @@ sum-up-numbers-simple(Y, N).
 /* Question2 */
 sum-up-numbers-general([],0).	%Base Case: Check if list is empty then 0
 sum-up-numbers-general([X|Y], N):-	    %Predicate for the sum
-xnumber(X),                             %check to see if head(first element) is a number
+number(X),                             %check to see if head(first element) is a number
