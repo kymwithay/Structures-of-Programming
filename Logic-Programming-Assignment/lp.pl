@@ -4,9 +4,11 @@ Structures of Programming
 
 Logic Programming Assignment
 
-*/Question 1
+%Question 1
+
+	%Base Case when the list is empty
+	sum-up-numbers-simple([],0).
 
 sum-up-numbers-simple(L,N);-
-contains(L, non numbers)
-contains(L, numbers)
+[X|Y] = L,
 N is X + Y.
