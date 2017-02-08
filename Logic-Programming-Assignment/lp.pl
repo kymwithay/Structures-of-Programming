@@ -25,7 +25,7 @@ sum-up-numbers-simple(Y, N).
 sum-up-numbers-general([],0).	%Base Case: Check if list is empty then 0
 
 sum-up-numbers-general([X|Y], N):-	    %Predicate for the sum
-xnumber(X),                             %check to see if head(first element) is a number
+number(X),                             %check to see if head(first element) is a number
 sum-up-numbers-general(Y,N1),           %recursive call to get the rest of element
 N is X + N1.                            %Assign sum to the result
 
@@ -35,3 +35,6 @@ atom(X),                                %Base Case: Check to see if a single ele
 sum-up-numbers-general(Y, N).
 
 
+sum-up-numbers-general([X|Y], N):-
+sum-up-numbers-general(Y, N1),            %iterate through the elements in the list
+N is X + N1.                              % assign the added elements to result.
