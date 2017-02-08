@@ -40,7 +40,19 @@ sum-up-numbers-general(Y, N1),            %iterate through the elements in the l
 N is X + N1.                              % assign the added elements to result.
 
 
+
+
+/* Question3 */
+min-above-min(L1, L2, N):-
+listlength(L2, Length),
+Length < 1,
+min_in_list(L1, N).
+
+
 /* Question4 */
 common-unique-elements([],_,[]).            % Base Case: Check if list 1 is empty then result is empty
 common-unique-elements([X|L1], L2, [Y|L3]):-    %Recursively get the first element in the list
 member(L2,X),!,common-unique-elements(L1,L2,L3).     %Check to see if 1st element of list one is common to that in list 2
+
+common-unique-elements([_|L1], L2, L3):-
+common-unique-elements(L1,L2,L3).             %Recursively get the rest of the elemnts in the list
