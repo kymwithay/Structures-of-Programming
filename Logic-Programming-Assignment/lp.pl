@@ -15,5 +15,5 @@ N is X + N1.						%assign sum to result
 
 
 sum-up-numbers-simple([X|Y], N):-   %Base Case: Checks for non-numeric numbers
-\+number(H),                        %if its not a number recusive call next element.
+\+number(X),                        %if its not a number recusive call next element.
 sum-up-numbers-simple(Y, N).
