@@ -6,9 +6,10 @@ Logic Programming Assignment
 
 %Question 1
 
-	%Base Case when the list is empty
-	sum-up-numbers-simple([],0).
+%Functions that are being used as helper function declarations
+sum-up-numbers-simple([],0). %Base Case when the list is empty
 
-sum-up-numbers-simple(L,N);-
+sum-up-numbers-simple(L,N);- 
 [X|Y] = L,
+number(X),
 N is X + Y.
