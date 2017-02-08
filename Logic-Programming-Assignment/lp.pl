@@ -41,4 +41,6 @@ N is X + N1.                              % assign the added elements to result.
 
 
 /* Question4 */
-common-unique-elements([],_,[]).    % Base Case: Check if list 1 is empty then result is empty
+common-unique-elements([],_,[]).            % Base Case: Check if list 1 is empty then result is empty
+common-unique-elements([X|L1], L2, [Y|L3]):-    %Recursively get the first element in the list
+member(L2,X),!.                                 %Check to see if 1st element of list one is common to that in list 2
