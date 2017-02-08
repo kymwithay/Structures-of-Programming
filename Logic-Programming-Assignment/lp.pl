@@ -38,3 +38,7 @@ sum-up-numbers-general(Y, N).
 sum-up-numbers-general([X|Y], N):-
 sum-up-numbers-general(Y, N1),            %iterate through the elements in the list
 N is X + N1.                              % assign the added elements to result.
+
+
+/* Question4 */
+common-unique-elements([],_,[]).    % Base Case: Check if list 1 is empty then result is empty
